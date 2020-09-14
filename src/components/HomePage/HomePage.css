@@ -1,0 +1,14 @@
+.HomePage {
+    background-color: rgb(152, 230, 255);
+    background-image: url('./HomeImage.jpg');
+    min-height: 50%;
+    min-height: 100vh;
+    display: flex;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+/* .photo {
+    height: 5px;
+    width: 5px; 
+} */
