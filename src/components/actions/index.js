@@ -16,3 +16,17 @@ export const createPatient = (data) => {
     }
   };
 
+  export const logIn = (data) => {
+    return {
+      type: 'LOGGED_IN',
+      data: data
+    }
+  };
+
+  export const logOut = (data) => {
+    return {
+      type: 'LOGGED_OUT',
+      data: data
+    }
+  };
+

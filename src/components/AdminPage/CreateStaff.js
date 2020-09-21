@@ -21,12 +21,15 @@ class CreateStaff extends Component {
   username:"",
   email:"",
   password:"",
-  phonenumber:8807716641
+  phonenumber:8807716641,
+  branch:""
          }
          this.handleusername = this.handleusername.bind(this);
          this.handleemail = this.handleemail.bind(this);
          this.handlepassword = this.handlepassword.bind(this);
          this.handlephonenumber = this.handlephonenumber.bind(this);
+         this.handlebranch = this.handlebranch.bind(this);
+
       }
       handleusername = event => {
           this.setState({ username: event.target.value });
@@ -40,6 +43,11 @@ class CreateStaff extends Component {
         handlephonenumber = event => {
           this.setState({ phonenumber: event.target.value });
         };
+
+        handlebranch = event => {
+        this.setState({ username: event.target.value });
+      };
+     
       render() {
         return (<div >
             <br/>
@@ -80,6 +88,16 @@ class CreateStaff extends Component {
       </ThemeProvider>
       <br/>
       <br/>
+
+      <ThemeProvider theme={theme}>
+        <TextField label="Branch Name" variant="outlined"
+         type=""
+         value={this.state.branch}
+         onChange={this.handlebranch} />
+      </ThemeProvider>
+
+      <br/>
+      <br/>
       <Button variant="outlined" onClick={()=>{
         this.props.createStaff({username: this.state.username, 
           email: this.state.email, phonenumber: this.state.phonenumber})
@@ -89,7 +107,7 @@ class CreateStaff extends Component {
         </div> : null
       }
       <SimpleTable 
-        header={['Staff Name', 'Email', 'Phone No']} 
+        header={['Staff Name', 'Email', 'Phone No', 'Branch']} 
         rows={this.props.staff} 
       />
 

@@ -26,6 +26,17 @@ import * as actionTypes from '../actions';
   };
 
   
+  export const user = (state = '', action) => {
+    switch (action.type){
+      case "LOGGED_IN":
+        return action.data
+      case "LOGGED_OUT":
+        return ''
+      default:
+            return state;
+    }
+  };
+
   
 
 // export const family = (state = [], action) => {

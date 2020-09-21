@@ -22,13 +22,13 @@ class AreaChart extends Component {
 				xValueFormatString: "YYYY",
 				yValueFormatString: "#,##0.##",
 				dataPoints: [
-					{ x: new Date(2025, 0), y: 7},
-					{ x: new Date(2025, 0), y: 7},
-					{ x: new Date(2024, 0), y: 6},
-					{ x: new Date(2023, 0), y: 5},
-					{ x: new Date(2022, 0), y: 4},
-					{ x: new Date(2021, 0), y: 3},
-					{ x: new Date(2020, 0), y: 3}
+					{ x: new Date('2020/09/10'), y: 7},
+					{ x: new Date('2020/09/11'), y: 7},
+					{ x: new Date('2020/09/12'), y: 6},
+					{ x: new Date('2020/09/13'), y: 5},
+					{ x: new Date('2020/09/14'), y: 4},
+					{ x: new Date('2020/09/15'), y: 3},
+					{ x: new Date('2020/09/16'), y: 8}
 				]
 			}
 			]

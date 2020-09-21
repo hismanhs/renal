@@ -46,8 +46,8 @@ export const SimpleTable = (props) => {
               <TableCell component="th" scope="row">
                 {row.name || row.username}
               </TableCell>
-              <TableCell align="right">{row.phone || row.email}</TableCell>
-              <TableCell align="right">{row.age || row.phonenumber}</TableCell>
+              <TableCell align="left">{row.phone || row.email}</TableCell>
+              <TableCell align="left">{row.age || row.phonenumber}</TableCell>
             </TableRow>
           ))}
         </TableBody>

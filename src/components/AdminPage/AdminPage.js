@@ -4,6 +4,8 @@ import CreateDoctor from './CreateDoctor';
 import CreateBranch from './CreateBranch';
 import EditData from './EditData';
 import Button from '@material-ui/core/Button';
+import NavBar from '../NavBar/NavBar';
+
 
 
 // import './AdminPage.css';
@@ -15,66 +17,40 @@ class AdminPage extends Component {
   constructor() {
     super();
     this.state = {
-      name: "React",
-      showHideDemo1: false,
-      showHideDemo2: false,
-      showHideDemo3: false,
-     showdatatable: false,
+      availableTabs: ['Create Branch', 'Create Doctor', 'Create Staff'],
+      selectedTab: null,
+      showMaintain: false
     };
-    this.hideComponent = this.hideComponent.bind(this);
+    this.updateTab = this.updateTab.bind(this);
   }
 
-  hideComponent(name) {
-    console.log(name);
-    switch (name) {
-      
-      case "showHideDemo1":
-        this.setState({ showHideDemo1: !this.state.showHideDemo1 });
-        break;
-
-        case "showHideDemo2":
-        this.setState({ showHideDemo2: !this.state.showHideDemo2 });
-        break;
-
-        case "showHideDemo3":
-        this.setState({ showHideDemo3: !this.state.showHideDemo3 });
-        break;
- case "showdatatable":
-         this.setState({showdatatable: !this.state.showdatatable});
-         break;
-
-        default:
-        null;
-    }
+  updateTab = (data) => {
+    this.setState({selectedTab:data, showMaintain: false})
   }
-
   render() {
-    const {showHideDemo1, showHideDemo2, showHideDemo3,showdatatable } = this.state;
-
     return (
-       <div ><div>
-     <Button variant="outlined"
-      type="" value="Search" onClick={() => this.hideComponent("showdatatable")}
-         >Remove Candidate</Button> 
-         </div>
-         <br/>
-         <br/>
-
-        <Button variant="outlined"
-        type="" value="Search" onClick={() => this.hideComponent("showHideDemo1")}
-        >Create Branch</Button>
+       <div >
+        <NavBar />
+         <div>
+           <br/>
           <Button variant="outlined"
-        type="" value="Search" onClick={() => this.hideComponent("showHideDemo2")}
-        >Create Doctor</Button>
-        <Button variant="outlined"
-        type="" value="Search" onClick={() => this.hideComponent("showHideDemo3")}
-        >Create Staff</Button>
-        {/* </div> */}
-        {showdatatable && <EditData/>}  
-        {showHideDemo1 && <CreateBranch/>}
-        {showHideDemo2 && <CreateDoctor />}
-        {showHideDemo3 && <CreateStaff/>}
-
+            type="" value="Search" onClick={() => this.setState({showMaintain:true})}
+              >Maintain Data</Button> 
+              </div>
+              <br/>
+              <br/>
+              {this.state.availableTabs.map(item => {
+                return <Button variant="outlined"
+                          value={item} onClick={() => {
+                            this.updateTab(item)}
+                          }>{item}
+                        </Button> 
+              })}
+              
+              {this.state.showMaintain ? <EditData/>: null}
+              {this.state.selectedTab === 'Create Branch' ? <CreateBranch/> : null}
+              {this.state.selectedTab === 'Create Doctor' ? <CreateDoctor /> : null}
+              {this.state.selectedTab === 'Create Staff' ? <CreateStaff/> : null}
       </div>
 
     );

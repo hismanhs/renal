@@ -6,6 +6,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
+import Tab from '@material-ui/core/Tab';
 
 const StyledMenu = withStyles({
   paper: {
@@ -57,9 +58,11 @@ export default function CustomizedMenus() {
         aria-haspopup="true"
         variant="contained"
         color="primary"
-        onClick={handleClick}
+        onClick={()=>{
+          
+        }}
       >
-        Login
+        Login hihs
       </Button>
       <StyledMenu
         id="customized-menu"
@@ -72,8 +75,7 @@ export default function CustomizedMenus() {
           <ListItemIcon>
             <Avatar>A</Avatar>
           </ListItemIcon>
-          <ListItemText primary="As Admin" />
-
+          <ListItemText primary={<Tab label="Admin"> Hi </Tab>} ></ListItemText>
         </StyledMenuItem>
         <StyledMenuItem>
           <ListItemIcon>

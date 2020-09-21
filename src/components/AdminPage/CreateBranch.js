@@ -55,7 +55,7 @@ class CreateBranch extends Component {
       <ThemeProvider theme={theme}>
         <TextField label="Branch Name" variant="outlined"
               type=""
-            //   value={this.state.branchname}
+               value={this.state.branchname}
               onChange={this.updateInput} />
       </ThemeProvider>
       <br/>

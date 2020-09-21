@@ -6,9 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+
 import './NavBar.css';
+import { connect } from 'react-redux';
+
 
 
 class NavBar extends Component {
@@ -29,13 +30,14 @@ class NavBar extends Component {
             <NavItem href="/">Home</NavItem>
           </Button>
           <Button variant="contained" color="primary" href="#contained-buttons">
-            <NavItem href="/login">Login</NavItem>
+            <NavItem href="/login">{this.props.user == '' ?"Log In":"Log Out"}</NavItem>
           </Button>
         </Toolbar>
       </AppBar>
+
     </div>
       <div>
-      <Tabs
+      {/* <Tabs
         indicatorColor="primary"
         textColor="primary"
       >
@@ -45,13 +47,33 @@ class NavBar extends Component {
       </Tab>
       <Tab label="Doctor Login" href="/doctorlogin"> 
       </Tab>
-      </Tabs>
+      </Tabs> */}
       </div>
       </div>
     );
   }
 }
-export default NavBar;
+
+//connect 
+// read stagte - user
+
+//read from redux state
+const mapStateToProps = (state, ownProps) => {
+  return {
+    user: state.user || []
+  }
+};
+
+// //to write to redux state
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//    // createPatient: contact => dispatch(createPatient(contact))
+//   }
+// };
+
+export default connect(mapStateToProps, null)(NavBar);
+
+
 
 
 

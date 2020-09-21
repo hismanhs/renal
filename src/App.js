@@ -30,21 +30,15 @@ const Doctorlogin=()=>(
  );
 class App extends Component {
   render() {
-    return (<div>
-      
-     <div>
-     <Router>
+    return <Router>
         <div className="App">
           <Route exact path="/" component={Home} /> 
           <Route path="/login" component={Login} />
           <Route path="/admin" component={Admin} />
           <Route path="/stafflogin" component={Stafflogin} />
-           <Route path="/doctorlogin" component={Doctorlogin} />
+          <Route path="/doctorlogin" component={Doctorlogin} />
         </div>
       </Router>
-     </div>
-      </div>
-    );
   }
 }
 

@@ -17,6 +17,7 @@
     "prop-types": "latest",
     "clsx": "latest",
     "@material-ui/icons": "latest",
+    "@material-ui/lab": "latest",
     "@material-ui/core": "latest"
   },
   "scripts": {
